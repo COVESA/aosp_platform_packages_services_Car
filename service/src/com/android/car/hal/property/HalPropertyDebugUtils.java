@@ -31,6 +31,7 @@ import android.hardware.automotive.vehicle.VehicleAreaSeat;
 import android.hardware.automotive.vehicle.VehicleAreaWheel;
 import android.hardware.automotive.vehicle.VehicleAreaWindow;
 import android.hardware.automotive.vehicle.VehicleProperty;
+import vendor.android.hardware.automotive.vehicle.VehiclePropertyOem;
 import android.hardware.automotive.vehicle.VehiclePropertyAccess;
 import android.hardware.automotive.vehicle.VehiclePropertyChangeMode;
 import android.hardware.automotive.vehicle.VehiclePropertyGroup;
@@ -85,6 +86,8 @@ public final class HalPropertyDebugUtils {
             return "VENDOR_PROPERTY" + hexSuffix;
         } else if (CarPropertyHelper.isBackportedProperty(propertyId)) {
             return "BACKPORTED_PROPERTY" + hexSuffix;
+        } else if (CarPropertyHelper.isOemProperty(propertyId)) {
+            return toName(VehiclePropertyOem.class, propertyId) + hexSuffix;
         }
         return "INVALID_PROPERTY_ID" + hexSuffix;
     }

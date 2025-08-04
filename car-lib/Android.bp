@@ -69,6 +69,7 @@ java_defaults {
     ],
     srcs: [
         ":android.car-full-src",
+        ":oem-vhal.car-full-src",
     ],
     aidl: {
         include_dirs: [
@@ -121,6 +122,7 @@ stubs_defaults {
     name: "android.car-docs-default",
     srcs: [
         "src/**/*.java",
+        ":oem-vhal.car-full-src",
     ],
     libs: [
         "android.car",
@@ -207,6 +209,7 @@ droidstubs {
     name: "android.car-stub-docs",
     srcs: [
         "src/**/*.java",
+        ":oem-vhal.car-full-src",
     ],
     libs: [
         "android.car",
@@ -225,6 +228,7 @@ droidstubs {
     name: "car-doc-stubs",
     srcs: [
         "src/**/*.java",
+        ":oem-vhal.car-full-src",
     ],
     create_doc_stubs: true,
     annotations_enabled: true,

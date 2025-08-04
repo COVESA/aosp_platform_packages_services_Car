@@ -70,8 +70,9 @@ public class PropertyHalServiceConfigs {
      * Represents one VHAL property that is exposed through
      * {@link android.car.hardware.property.CarPropertyManager}.
      *
-     * Note that the property ID is defined in {@link android.car.VehiclePropertyIds} and it might
-     * be different than the property ID used by VHAL, defined in {@link VehicleProperty}.
+     * Note that the property ID is defined in {@link android.car.VehiclePropertyIds} and
+     * {@link android.car.oem.VehiclePropertyIdsOem} and it might be different than the property
+     * ID used by VHAL, defined in {@link VehicleProperty}.
      * The latter is represented by {@code halPropId}.
      *
      * If the property is an {@code Integer} enum property, its supported enum values are listed
@@ -98,6 +99,8 @@ public class PropertyHalServiceConfigs {
             "FLAG_VEHICLE_PROPERTY_REMOVE_SYSTEM_API_TAGS";
     private static final String FLAG_25Q2_3P_PERMISSIONS =
             "FLAG_VEHICLE_PROPERTY_25Q2_3P_PERMISSIONS";
+    private static final String FLAG_OEM_VEHICLE_PROPERTY =
+            "FLAG_OEM_VEHICLE_PROPERTY";
     private static final String B_FLAG_NAME = "FLAG_ANDROID_B_VEHICLE_PROPERTIES";
 
     private final FeatureFlags mFeatureFlags;
@@ -560,6 +563,8 @@ public class PropertyHalServiceConfigs {
                     break;
                 case FLAG_25Q2_3P_PERMISSIONS:
                     // do nothing as no behavior change
+                    break;
+                case FLAG_OEM_VEHICLE_PROPERTY:
                     break;
                 case B_FLAG_NAME:
                     if (!mFeatureFlags.androidBVehicleProperties()) {

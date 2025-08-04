@@ -415,3 +415,11 @@ flag {
     description: "Density dpi scaling of display compat apps"
     bug: "379954641"
 }
+
+# OEM Vehicle Properties
+flag {
+    name: "oem_vehicle_property"
+    namespace: "car_perception"
+    description: "Enables use of extended OEM vehicle properties introduced by COVESA"
+    bug: "COVESA-VHAL"
+}

@@ -263,6 +263,7 @@ android_app {
     privileged: true,
 
     required: ["allowed_privapp_com.android.car"],
+    static_libs : ["oem-service-non-module"],
 }
 
 // Added to car.framework module
@@ -273,6 +274,7 @@ android_app {
     privileged: true,
 
     apex_available: ["com.android.car.framework"],
+    static_libs : ["oem-service"],
 }
 
 java_library {
@@ -345,5 +347,6 @@ java_defaults {
         "android.hardware.automotive.vehicle-V2.0-java",
         "android.hardware.automotive.vehicle-V4-java",
         "android.hardware.automotive.vehicle.property-V4-java",
+        "vendor.android.hardware.automotive.vehicle.property-V1-java",
     ],
 }

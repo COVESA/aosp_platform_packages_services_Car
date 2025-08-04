@@ -20,6 +20,7 @@ import static com.android.car.internal.ExcludeFromCodeCoverageGeneratedReport.PR
 
 import android.annotation.Nullable;
 import android.car.VehiclePropertyIds;
+import android.car.oem.VehiclePropertyIdsOem;
 
 import com.android.car.internal.ExcludeFromCodeCoverageGeneratedReport;
 import com.android.car.internal.util.ConstantDebugUtils;
@@ -42,6 +43,9 @@ public final class VehiclePropertyIdDebugUtils {
      */
     @Nullable
     public static String toName(int propertyId) {
+        if (CarPropertyHelper.isOemProperty(propertyId)) {
+            return ConstantDebugUtils.toName(VehiclePropertyIdsOem.class, propertyId);
+        }
         return ConstantDebugUtils.toName(VehiclePropertyIds.class, propertyId);
     }
 

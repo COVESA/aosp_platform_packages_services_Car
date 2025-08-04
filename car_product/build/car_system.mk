@@ -242,6 +242,12 @@ PRODUCT_PACKAGES += \
     CarPermissionControllerRRO \
     CarSystemUIRRO
 
+# VHAL Permission Grant Proxy Service
+PRODUCT_PACKAGES += \
+    VhalPermissionGrantProxyService
+
+BOARD_SEPOLICY_DIRS += packages/services/oem/vhal-mapper-permission-grant-proxy-service/sepolicy
+
 # System Server components
 # Order is important: if X depends on Y, then Y should precede X on the list.
 PRODUCT_SYSTEM_SERVER_JARS += car-frameworks-service

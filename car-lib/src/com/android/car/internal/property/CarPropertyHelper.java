@@ -46,6 +46,7 @@ public final class CarPropertyHelper {
     private static final int VEHICLE_PROPERTY_GROUP_MASK = 0xf0000000;
     private static final int VEHICLE_PROPERTY_GROUP_VENDOR = 0x20000000;
     private static final int VEHICLE_PROPERTY_GROUP_BACKPORTED = 0x30000000;
+    private static final int VEHICLE_PROPERTY_GROUP_OEM = 0x40000000;
 
     /**
      * CarPropertyHelper only contains static fields and methods and must never be instantiated.
@@ -59,7 +60,7 @@ public final class CarPropertyHelper {
      * Returns whether the property ID is supported by the current Car Service version.
      */
     public static boolean isSupported(int propertyId) {
-        return isSystemProperty(propertyId) || isVendorOrBackportedProperty(propertyId);
+        return isSystemProperty(propertyId) || isVendorOrBackportedProperty(propertyId) || isOemProperty(propertyId);
     }
 
     /**
@@ -110,6 +111,13 @@ public final class CarPropertyHelper {
      */
     public static boolean isBackportedProperty(int propertyId) {
         return (propertyId & VEHICLE_PROPERTY_GROUP_MASK) == VEHICLE_PROPERTY_GROUP_BACKPORTED;
+    }
+
+    /**
+     * Returns whether the property ID is defined as a OEM property.
+     */
+    public static boolean isOemProperty(int propertyId) {
+        return (propertyId & VEHICLE_PROPERTY_GROUP_MASK) == VEHICLE_PROPERTY_GROUP_OEM;
     }
 
     /**

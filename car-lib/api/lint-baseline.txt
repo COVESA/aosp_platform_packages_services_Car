@@ -237,6 +237,10 @@ StaticFinalBuilder: android.car.drivingstate.CarUxRestrictions.Builder:
 
 StaticUtils: android.car.VehiclePropertyIds:
     Fully-static utility classes must not have constructor
+StaticUtils: android.car.oem.VehiclePropertyIdsOem:
+    Fully-static utility classes must not have constructor
+StaticUtils: android.car.oem.OemPermissions:
+    Fully-static utility classes must not have constructor
 
 
 Todo: android.car.VehiclePropertyIds#AP_POWER_BOOTUP_REASON:
@@ -1903,6 +1907,10 @@ UnflaggedApi: android.car.remoteaccess.RemoteTaskClientRegistrationInfo#getVehic
     New API must be flagged with @FlaggedApi: method android.car.remoteaccess.RemoteTaskClientRegistrationInfo.getVehicleId()
 UnflaggedApi: android.car.remoteaccess.RemoteTaskClientRegistrationInfo#writeToParcel(android.os.Parcel, int):
     New API must be flagged with @FlaggedApi: method android.car.remoteaccess.RemoteTaskClientRegistrationInfo.writeToParcel(android.os.Parcel,int)
+UnflaggedApi: android.car.oem.VehiclePropertyIdsOem:
+    New API must be flagged with @FlaggedApi: class android.car.oem.VehiclePropertyIdsOem
+UnflaggedApi: android.car.oem.OemPermissions:
+    New API must be flagged with @FlaggedApi: class android.car.oem.OemPermissions
 UnflaggedApi: android.car.watchdog.CarWatchdogManager:
     New API must be flagged with @FlaggedApi: class android.car.watchdog.CarWatchdogManager
 UnflaggedApi: android.car.watchdog.CarWatchdogManager#FLAG_RESOURCE_OVERUSE_IO:

@@ -28,6 +28,7 @@ java_sdk_library {
     ],
     srcs: [
         ":android.car-full-src",
+        ":oem-vhal.car-full-src",
         ":com.android.car.internal.dep-src",
     ],
     aidl: {
